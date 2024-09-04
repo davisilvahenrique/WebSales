@@ -1,4 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using WebSales.Data;
+using WebSales.Services;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<WebSalesContext>(options => {
+    var connectionString = builder.Configuration.GetConnectionString("WebSalesContext");
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+    });
+
+builder.Services.AddScoped<SeedingService>();
+builder.Services.AddScoped<SellerService>();
+builder.Services.AddScoped<DepartmentService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -23,5 +36,11 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+using (var scope = app.Services.CreateScope())
+{
+    var seedingService = scope.ServiceProvider.GetRequiredService<SeedingService>();
+    seedingService.Seed();
+}
 
 app.Run();
