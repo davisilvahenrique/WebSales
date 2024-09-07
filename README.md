@@ -89,7 +89,7 @@ http://localhost:5062/
 
 ## Contact
 
-- **Davi Henrique**: [GitHub](https://github.com/davisilvahenrique)
-- **Davi Henrique**: [Linkedin](https://www.linkedin.com/in/davisilvahenrique/)
-- **Email**:davisilvahenrique@gmail.com
+- [GitHub](https://github.com/davisilvahenrique)
+- [Linkedin](https://www.linkedin.com/in/davisilvahenrique/)
+- davisilvahenrique@gmail.com
 
