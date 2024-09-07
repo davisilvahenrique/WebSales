@@ -1,6 +1,6 @@
 {
   "name": "ASP.NET Core MVC",
-  "dockerFile": "Dockerfile",
+  "dockerFile": "../Dockerfile",
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash"
   },
